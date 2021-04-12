@@ -70,7 +70,7 @@ app.use(cors());
 //     });
 // });
 
-app.get('/', (req,res) => {
+app.get('/getData', (req,res) => {
   client.query('SELECT * FROM public.players ORDER BY id ASC;').then(data => {
     if(data.rows.length){
       res.json(data.rows);

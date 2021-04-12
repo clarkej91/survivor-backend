@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios'
 import io from "socket.io-client";
 
-const URL = "http://localhost:5000";
+const URL = "http://localhost:5000/getData";
 const socket = io.connect(URL, { transport : ['websocket'] });
 
 class App extends Component {
@@ -49,7 +49,7 @@ class App extends Component {
   }
 
   getData() {
-    axios.get('http://localhost:5000').then((res) => {
+    axios.get('getData').then((res) => {
       const response = res.data;
       // console.log(response)
       this.setState({response});
